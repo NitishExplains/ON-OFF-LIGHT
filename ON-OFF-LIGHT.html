@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cool Bulb Switch</title>
+<style>
+  body {
+    text-align: center;
+    background: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    margin-top: 20px;
+    font-size: 2em;
+  }
+  img {
+    width: 150px;
+    margin: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  img.glow {
+    filter: drop-shadow(0 0 20px yellow);
+    transform: scale(1.05);
+  }
+  button {
+    background: linear-gradient(90deg, #facc15, #f97316);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #fde047, #fb923c);
+  }
+</style>
+</head>
+<body>
+
+<h1>💡 Stylish Bulb On/Off Switch</h1>
+
+<img id="myImage" src="pic_bulboff.gif" alt="Bulb">
+
+<br>
+<button onclick="turnOn()">Turn ON</button>
+<button onclick="turnOff()">Turn OFF</button>
+
+<script>
+function turnOn() {
+  let bulb = document.getElementById('myImage');
+  bulb.src = 'pic_bulbon.gif';
+  bulb.classList.add('glow');
+}
+
+function turnOff() {
+  let bulb = document.getElementById('myImage');
+  bulb.src = 'pic_bulboff.gif';
+  bulb.classList.remove('glow');
+}
+</script>
+
+</body>
+</html>
